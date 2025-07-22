@@ -1,4 +1,4 @@
-/* ========== VARIABLES GLOBALES ========== */
+/* VARIABLES GLOBALES */
 :root {
   --color-fondo: #f1f3f6;
   --color-blanco: white;
@@ -8,21 +8,24 @@
   --color-tabla-header: #e0e0e0;
   --color-link: #337ab7;
 
+  /* Fuente y estilos generales */
   --fuente-principal: Arial, sans-serif;
   --sombra-suave: 0 0 10px rgba(0, 0, 0, 0.05);
 
+  /* Bordes y dimensiones */
   --radio-borde: 6px;
   --padding-contenedor: 30px 20px;
   --max-ancho-container: 1100px;
   --max-ancho-inner: 900px;
-
   --altura-navbar: 60px;
+
+  /* Tamaños de fuente */
   --font-size-titulo: 40px;
   --font-size-link: 20px;
   --font-size-tabla: 18px;
 }
 
-/* ========== ESTILOS GENERALES ========== */
+/* ESTILOS GENERALES */
 body {
   margin: 0;
   font-family: var(--fuente-principal);
@@ -32,7 +35,6 @@ body {
   flex-direction: column;
 }
 
-/* Contenedor principal de la página */
 .page-wrapper {
   flex: 1;
   display: flex;
@@ -41,7 +43,6 @@ body {
   padding: 80px 0 100px;
 }
 
-/* Contenedor del contenido */
 .container {
   width: 100%;
   max-width: var(--max-ancho-container);
@@ -56,7 +57,6 @@ body {
   position: relative;
 }
 
-/* Contenido interno centrado */
 .inner-content {
   width: 100%;
   max-width: var(--max-ancho-inner);
@@ -65,29 +65,29 @@ body {
   align-items: center;
   flex: 1;
   height: 100%;
+  padding-bottom: 60px;
 }
 
-/* Logo de Aventones */
+/* LOGO */
 .logo {
   display: block;
   margin: 0 auto 15px;
   width: 450px;
 }
 
-/* ========== NAVBAR ========== */
+/* NAVBAR */
 .navbar {
-  background-color: var(--color-fondo);
+  background-color: #f1f1f1;
   width: 100%;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: var(--altura-navbar);
-  padding: 0 20px;
-  border-radius: 4px;
+  padding: 0; /* Quita espacio interior */
+  border-radius: 0;
 }
 
-/* Enlaces del menú de navegación */
 .nav-links {
   display: flex;
   flex-direction: row;
@@ -105,13 +105,15 @@ body {
   height: 100%;
 }
 
-/* Enlace activo (Bookings) */
+/* Estilo del botón activo */
 .nav-links a.active {
   background-color: var(--color-activo);
   color: white;
+  font-weight: bold;
+  border-radius: 0; /* Sin esquinas redondeadas */
 }
 
-/* ========== BÚSQUEDA + USUARIO ========== */
+/* BÚSQUEDA + USUARIO */
 .nav-right {
   display: flex;
   align-items: center;
@@ -138,7 +140,7 @@ body {
 }
 
 .toggle-menu {
-  display: none;
+  display: none; /* Checkbox oculto */
 }
 
 .dropdown-menu {
@@ -167,12 +169,12 @@ body {
   border-bottom: none;
 }
 
-/* Mostrar menú al activar checkbox */
+/* Mostrar menú si el checkbox está activado */
 .toggle-menu:checked + .dropdown-menu {
   display: block;
 }
 
-/* ========== TÍTULO PRINCIPAL ========== */
+/* TÍTULO PRINCIPAL  */
 .title {
   text-align: center;
   font-weight: 300;
@@ -182,6 +184,7 @@ body {
   position: relative;
 }
 
+/* Línea debajo del título */
 .title::after {
   content: "";
   position: absolute;
@@ -193,7 +196,74 @@ body {
   background-color: var(--color-subrayado);
 }
 
-/* ========== TABLA DE BOOKINGS ========== */
+/* FILTROS DE BÚSQUEDA */
+.filters-box {
+  width: 100%;
+  border: 1px solid #999;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.filters-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filters-days {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filters-box label {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.filters-box select {
+  padding: 6px 12px;
+  font-size: 17px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.filters-box .btn {
+  padding: 10px 22px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--color-activo);
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+
+.filters-box .btn:hover {
+  background-color: #105fa5;
+}
+
+/* RESULTADOS TEXTO */
+.results-text {
+  text-align: left;
+  margin: 25px 0 10px;
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+}
+
+/* TABLA DE RESULTADOS */
 .rides-table {
   width: 100%;
   border-collapse: collapse;
@@ -229,7 +299,16 @@ body {
   margin-right: 8px;
 }
 
-/* ========== PIE DE PÁGINA ========== */
+/* MAPA */
+.mapa {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+/* PIE DE PÁGINA (FOOTER)  */
 footer {
   position: absolute;
   bottom: 0;
@@ -253,12 +332,30 @@ footer {
   position: relative;
 }
 
+/* Separador visual entre enlaces del footer */
 .footer-links a::after {
   content: "|";
   margin-left: 8px;
   color: #999;
 }
 
+/* Quitar línea después del último enlace */
 .footer-links a:last-child::after {
   content: "";
 }
+.mapa {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+/* Estilo limpio y validado para el iframe */
+.mapa-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+

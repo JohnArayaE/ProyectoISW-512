@@ -1,9 +1,24 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+:root {
+  --color-fondo: #f9f9f9;
+  --color-principal: #5c5b5b;
+  --color-texto: #333;
+  --color-borde: #a09d9d;
+  --color-link: #0269c9;
+  --color-linea-titulo: #ccc;
+  --fuente-principal: 'Open Sans', sans-serif;
+  --padding-input: 15px;
+  --radio-borde: 4px;
+  --sombra: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
+/* Configuración general del body */
+body {
+  margin: 0;
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+}
+
+/* Contenedor principal centrado */
 .page-wrapper {
   min-height: 100vh;
   display: flex;
@@ -12,20 +27,22 @@ body {
   padding: 30px 0;
 }
 
+/* Contenedor interno del formulario */
 .container {
   width: 100%;
   max-width: 1100px;
   background-color: white;
   padding: 30px;
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--sombra);
   display: flex;
   justify-content: center;
   overflow: hidden;
-  position: relative; 
+  position: relative;
 }
 
-.inner-content {
+/* Contenido principal centrado */
+main.inner-content {
   width: 100%;
   max-width: 700px;
   display: flex;
@@ -33,15 +50,17 @@ body {
   align-items: center;
 }
 
+/* Logo principal */
 .logo {
   display: block;
   margin: 0 auto 50px;
-  max-width: 100%; width: 400px;
+  max-width: 100%;
+  width: 400px;
 }
 
+/* Título del formulario */
 .title {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 50px;
   color: #5e5e5e;
@@ -50,6 +69,7 @@ body {
   padding-bottom: 20px;
 }
 
+/* Línea decorativa bajo el título */
 .title::after {
   content: "";
   position: absolute;
@@ -58,13 +78,15 @@ body {
   bottom: 0;
   height: 1px;
   width: 240px;
-  background-color: #ccc;
+  background-color: var(--color-linea-titulo);
 }
 
+/* Estilo general del formulario */
 form {
   width: 100%;
 }
 
+/* Grupo de inputs */
 .input-group {
   display: flex;
   gap: 20px;
@@ -72,36 +94,40 @@ form {
   flex-wrap: wrap;
 }
 
+/* Campo individual */
 .input-field {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+/* Para que un campo ocupe el ancho completo */
 .full-width {
   flex: 1 0 100%;
 }
 
-input, select {
-  padding: 15px;
+/* Inputs y selects */
+input,
+select {
+  padding: var(--padding-input);
   font-size: 16px;
   margin-top: 5px;
-  border: 1px solid #a09d9d;
-  border-radius: 4px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
 }
 
+/* Select estilizado con ícono de flecha */
 select {
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("https://tse1.mm.bing.net/th/id/OIP.0qiAawhb0ans5E-q7tvqtwHaHa?r=0&pid=ImgDet&w=168&h=168&c=7&o=7&rm=3");
+  background-image: url("https://tse1.mm.bing.net/th/id/OIP.0qiAawhb0ans5E-q7tvqtwHaHa?w=168&h=168&c=7");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 19px 19px;
 }
 
+/* Botón de envío */
 .btn {
-  background-color: #5c5b5b;
+  background-color: var(--color-principal);
   color: white;
   padding: 13px 50px;
   border: none;
@@ -111,6 +137,7 @@ select {
   display: block;
 }
 
+/* Enlaces debajo del formulario */
 .login-links {
   text-align: center;
   font-size: 14px;
@@ -122,7 +149,7 @@ select {
 }
 
 .login-links a {
-  color: #0269c9;
+  color: var(--color-link);
   text-decoration: none;
   font-size: 0.95rem;
 }
@@ -131,27 +158,30 @@ select {
   text-decoration: underline;
 }
 
+/* Pie de página */
 footer {
   width: 200%;
   margin-top: 50px;
   padding: 20px 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--color-linea-titulo);
   text-align: center;
   font-size: 0.9rem;
-  color: #333;
+  color: var(--color-texto);
 }
 
+/* Enlaces del pie */
 .footer-links {
   margin-bottom: 10px;
 }
 
 .footer-links a {
   margin: 0 8px;
-  color: #333;
+  color: var(--color-texto);
   text-decoration: none;
   position: relative;
 }
 
+/* Separador entre enlaces */
 .footer-links a::after {
   content: "|";
   margin-left: 8px;

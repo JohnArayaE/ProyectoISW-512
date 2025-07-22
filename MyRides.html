@@ -8,35 +8,55 @@
 </head>
 <body>
   <div class="page-wrapper">
-    <div class="container">
-      <div class="inner-content">
-        <img src="img/imagenLogo.png" alt="Logo Aventones" class="logo" />
+    <main class="container">
+      <section class="inner-content">
+        <header>
+          <img src="img/imagenLogo.png" alt="Logo Aventones" class="logo" />
+        </header>
 
-        <nav class="navbar">
+        <!-- Barra de navegación principal -->
+        <nav class="navbar" aria-label="Main Navigation">
           <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#" class="active">Rides</a>
-            <a href="#">Bookings</a>
+            <a href="SearhRides.html">Home</a>
+            <a href="MyRides.html" class="active">Rides</a>
+            <a href="Bookings.html">Bookings</a>
           </div>
           <div class="nav-right">
-            <input type="text" placeholder="Search..." class="search-bar" />
-            <img src="img/icon-user.png" alt="User Icon" class="user-icon" />
+            <input type="search" placeholder="Search..." class="search-bar" aria-label="Search">
+
+            <div class="user-menu">
+              <label for="user-toggle" class="user-icon-label">
+                <img src="img/icon-user.png" alt="User Icon" class="user-icon">
+              </label>
+              <input type="checkbox" id="user-toggle" hidden>
+              <ul class="submenu">
+                <li><a href="index.html">Logout</a></li>
+                <li><a href="Configuration.html">Configuration</a></li>
+                <li><a href="EditProfile.html">Profile</a></li>
+              </ul>
+            </div>
           </div>
         </nav>
 
         <h2 class="title">My rides</h2>
 
-        <div class="rides-section">
-          <button class="new-ride-btn">New Ride</button>
+        <section class="rides-section">
+          <!-- Encabezado oculto para accesibilidad -->
+          <h2 class="visually-hidden">Lista de viajes creados por el proveedor</h2>
+
+          <!-- Botón New Ride -->
+          <a href="NewRide.html" class="new-ride-btn-link">New Ride</a>
+
+          <!-- Tabla de viajes -->
           <table class="rides-table">
             <thead>
               <tr>
-                <th>From</th>
-                <th>To</th>
-                <th>Seats</th>
-                <th>Car</th>
-                <th>Fee</th>
-                <th>Actions</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Seats</th>
+                <th scope="col">Car</th>
+                <th scope="col">Fee</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -46,7 +66,7 @@
                 <td>2</td>
                 <td>Nissan Pathfinder 2015</td>
                 <td>$5</td>
-                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                <td><a href="EditRide.html">Edit</a> | <a href="#">Delete</a></td>
               </tr>
               <tr>
                 <td><a href="#">Quesada</a></td>
@@ -54,7 +74,7 @@
                 <td>1</td>
                 <td>Toyota Corolla 2020</td>
                 <td>$10</td>
-                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                <td><a href="EditRide.html">Edit</a> | <a href="#">Delete</a></td>
               </tr>
               <tr>
                 <td><a href="#">Aguas Zarcas</a></td>
@@ -62,23 +82,26 @@
                 <td>1</td>
                 <td>Ford Festiva 1990</td>
                 <td>--</td>
-                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                <td><a href="EditRide.html">Edit</a> | <a href="#">Delete</a></td>
               </tr>
             </tbody>
           </table>
-        </div>
-      <footer>
-        <div class="footer-links">
-          <a href="#">Home</a>
-          <a href="#">Rides</a>
-          <a href="#">Bookings</a>
-          <a href="#">Settings</a>
-          <a href="index.html">Login</a>
-          <a href="Registration.html">Register</a>
-        <p>&copy; Aventones.com</p>
-      </footer>
-      </div>
-    </div>
+        </section>
+        <!-- Pie de página común del sitio -->
+        <footer>
+          <nav class="footer-links" aria-label="Footer Navigation">
+            <!-- Enlaces a otras secciones del sitio -->
+            <a href="SearhRides.html">Home</a>
+            <a href="MyRides.html">Rides</a>
+            <a href="Bookings.html">Bookings</a>
+            <a href="Configuration.html">Settings</a>
+            <a href="index.html">Login</a>
+            <a href="Registration.html">Register</a>
+          </nav>
+          <p>&copy; Aventones.com</p>
+        </footer>
+      </section>
+    </main>
   </div>
 </body>
 </html>

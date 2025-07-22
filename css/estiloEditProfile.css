@@ -1,7 +1,20 @@
+:root {
+  /* Variables de colores y estilos generales */
+  --color-fondo: #f1f3f6;
+  --color-principal: #167bd3;
+  --color-secundario: #337ab7;
+  --color-texto: #333;
+  --color-borde: #ccc;
+  --color-footer: #999;
+  --fuente: Arial, sans-serif;
+  --radio: 4px;
+  --padding-input: 10px;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f1f3f6;
+  font-family: var(--fuente);
+  background-color: var(--color-fondo);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +33,7 @@ body {
   max-width: 1100px;
   background-color: white;
   padding: 30px 20px;
-  border-radius: 6px;
+  border-radius: var(--radio);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
@@ -45,6 +58,7 @@ body {
   width: 450px;
 }
 
+/* Estilos para el navbar */
 .navbar {
   background-color: #f1f1f1;
   width: 100%;
@@ -53,8 +67,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  border-radius: 4px;
-  overflow: hidden;
+  padding: 0;
 }
 
 .nav-links {
@@ -65,7 +78,7 @@ body {
 .nav-links a {
   padding: 0 30px;
   text-decoration: none;
-  color: #333;
+  color: var(--color-texto);
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -74,22 +87,28 @@ body {
 }
 
 .nav-links a.active {
-  background-color: #167bd3;
+  background-color: var(--color-principal);
   color: white;
+  border-radius: 0;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding-right: 20px;
 }
 
+/* Estilos del buscador */
 .search-bar {
-  padding: 10px 15px;
+  padding: var(--padding-input);
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: var(--radio);
   width: 200px;
+}
+
+/* Estilos del icono de usuario */
+.user-dropdown {
+  position: relative;
 }
 
 .user-icon {
@@ -97,8 +116,50 @@ body {
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
+  cursor: pointer;
 }
 
+.user-icon-label {
+  cursor: pointer;
+}
+
+.toggle-menu {
+  display: none;
+}
+
+/* Menú desplegable del usuario */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  border: 1px solid var(--color-borde);
+  width: 160px;
+  z-index: 10;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--color-texto);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Mostrar el menú si el checkbox está activo */
+.toggle-menu:checked + .dropdown-menu {
+  display: block;
+}
+
+/* Título de la sección */
 .title {
   text-align: center;
   font-weight: 300;
@@ -106,7 +167,6 @@ body {
   color: #5e5858;
   margin-bottom: 30px;
   position: relative;
-  padding-bottom: 0;
 }
 
 .title::after {
@@ -117,9 +177,10 @@ body {
   bottom: 0;
   height: 1px;
   width: 200px;
-  background-color: #ccc;
+  background-color: var(--color-borde);
 }
 
+/* Estilos del formulario */
 .profile-form {
   width: 100%;
   max-width: 700px;
@@ -141,21 +202,23 @@ body {
 .form-group label {
   margin-bottom: 5px;
   font-size: 16px;
-  color: #333;
+  color: var(--color-texto);
 }
 
 .form-group input,
 .form-group select {
-  padding: 10px;
+  padding: var(--padding-input);
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
 }
 
+/* Para inputs de ancho completo */
 .full-width {
   flex: 100%;
 }
 
+/* Fila de botones */
 .button-row {
   display: flex;
   justify-content: flex-end;
@@ -166,32 +229,33 @@ body {
 .cancel-btn {
   padding: 12px 30px;
   background-color: #ccc;
-  color: #333;
+  color: var(--color-texto);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: var(--radio);
   font-size: 16px;
 }
 
 .save-btn {
   padding: 12px 30px;
-  background-color: #337ab7;
+  background-color: var(--color-secundario);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radio);
   font-size: 16px;
   cursor: pointer;
 }
 
+/* Pie de página */
 footer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 20px 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--color-borde);
   text-align: center;
   font-size: 0.9rem;
-  color: #333;
+  color: var(--color-texto);
 }
 
 .footer-links {
@@ -200,7 +264,7 @@ footer {
 
 .footer-links a {
   margin: 0 8px;
-  color: #333;
+  color: var(--color-texto);
   text-decoration: none;
   position: relative;
 }
@@ -208,7 +272,7 @@ footer {
 .footer-links a::after {
   content: "|";
   margin-left: 8px;
-  color: #999;
+  color: var(--color-footer);
 }
 
 .footer-links a:last-child::after {

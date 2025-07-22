@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Metadatos básicos -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aventones - Login</title>
+  <!-- Enlace al archivo CSS principal -->
   <link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
-  <div class="wrapper">
-    <div class="login-container">
+  <!-- Contenedor principal del contenido -->
+  <main class="wrapper">
+    <!-- Sección del formulario de inicio de sesión -->
+    <section class="login-container">
+      <!-- Encabezado oculto para accesibilidad -->
+      <h2 class="visually-hidden">Sección de inicio de sesión</h2>
+
+      <!-- Logo principal de la aplicación -->
       <img src="img/imagenLogo.png" alt="Logo Aventones" class="logo" />
 
+      <!-- Botón simulado para iniciar sesión con Google -->
       <div class="google-btn">
-        <button class="google">
+        <button class="google" type="button">
           <img src="img/Googlelogo.svg.png" alt="Google Icon" />
           <span>Sign in with Google</span>
         </button>
       </div>
+
+      <!-- Separador visual entre métodos de login -->
       <p class="or">Or</p>
+
+      <!-- Formulario de inicio de sesión -->
       <form action="MyRides.html" method="get">
+        <!-- Campo de nombre de usuario -->
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required />
+
+        <!-- Campo de contraseña -->
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required />
+
+        <!-- Enlace a la página de registro -->
         <div class="register">
-          <span>Not a user?</span>
-          <a href="Registration.html">Register Now</a>
+          <span>Not a user? <a href="Registration.html">Register Now</a></span>
         </div>
+
+        <!-- Botón de login -->
         <button type="submit" class="login-btn">Login</button>
       </form>
-    </div>
-  </div>
+    </section>
+  </main>
+
+  <!-- Pie de página común del sitio -->
   <footer>
     <div class="footer-links">
-      <a href="#">Home</a>
-      <a href="#">Rides</a>
-      <a href="#">Bookings</a>
-      <a href="#">Settings</a>
+      <!-- Enlaces a otras secciones del sitio -->
+      <a href="SearhRides.html">Home</a>
+      <a href="MyRides.html">Rides</a>
+      <a href="Bookings.html">Bookings</a>
+      <a href="Configuration.html">Settings</a>
       <a href="index.html">Login</a>
       <a href="Registration.html">Register</a>
     </div>

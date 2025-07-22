@@ -1,18 +1,34 @@
-/* Reset básico */
+/* Variables personalizadas para colores y fuentes */
+:root {
+  --fondo-general: #f8f8f8;
+  --color-borde: #4a90e2;
+  --color-boton: #357ABD;
+  --color-boton-hover: #2c65a5;
+  --color-texto: #333;
+  --color-link: #0275f8;
+  --borde-input: #ccc;
+  --color-google: #4285f4;
+  --sombra: 0 0 8px rgba(0, 0, 0, 0.05);
+  --fuente-general: 'Segoe UI', sans-serif;
+}
+
+/* Estilos generales de reseteo */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--fuente-general);
 }
 
+/* Cuerpo de la página */
 body {
-  background-color: #f8f8f8;
+  background-color: var(--fondo-general);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Contenedor principal */
 .wrapper {
   flex: 1;
   display: flex;
@@ -21,30 +37,31 @@ body {
   align-items: center;
 }
 
-
+/* Caja blanca del login */
 .login-container {
   background-color: white;
-  border: 2px solid #4a90e2;
+  border: 2px solid var(--color-borde);
   border-radius: 4px;
   padding: 30px 40px;
   width: 750px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--sombra);
   text-align: center;
 }
 
-
+/* Logo de Aventones */
 .logo {
   width: 300px;
   margin-bottom: 20px;
 }
 
-
+/* Contenedor del botón de Google */
 .google-btn {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
 }
 
+/* Botón de login con Google */
 .google {
   display: flex;
   align-items: center;
@@ -54,23 +71,26 @@ body {
   border: 1px solid #dadce0;
   border-radius: 25px;
   cursor: pointer;
-  color: #4285f4;
+  color: var(--color-google);
   font-weight: bold;
   font-size: 14px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
+/* Icono de Google */
 .google img {
   width: 20px;
   height: 20px;
 }
 
+/* Separador "Or" */
 .or {
   margin-bottom: 15px;
   font-weight: bold;
-  color: #333;
+  color: var(--color-texto);
 }
 
+/* Formulario de login */
 form {
   display: flex;
   flex-direction: column;
@@ -78,6 +98,7 @@ form {
   text-align: left;
 }
 
+/* Etiquetas del formulario */
 form label {
   display: block;
   width: 250px;
@@ -85,15 +106,18 @@ form label {
   text-align: left;
 }
 
+/* Campos de texto del formulario */
 form input[type="text"],
 form input[type="password"] {
   width: 250px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--borde-input);
   border-radius: 4px;
   margin: 0 auto;
   display: block;
 }
+
+/* Texto debajo del formulario con enlace a registro */
 .register {
   font-size: 0.9rem;
   margin-top: 8px;
@@ -101,7 +125,7 @@ form input[type="password"] {
 }
 
 .register a {
-  color: #0275f8;
+  color: var(--color-link);
   text-decoration: none;
 }
 
@@ -109,10 +133,10 @@ form input[type="password"] {
   text-decoration: underline;
 }
 
-
+/* Botón de Login */
 .login-btn {
   margin-top: 10px;
-  background-color: #357ABD;
+  background-color: var(--color-boton);
   color: white;
   padding: 10px 25px;
   border: none;
@@ -125,11 +149,12 @@ form input[type="password"] {
   width: fit-content;
 }
 
+/* Efecto hover del botón */
 .login-btn:hover {
-  background-color: #2c65a5;
+  background-color: var(--color-boton-hover);
 }
 
-
+/* Pie de página */
 footer {
   width: 100%;
   margin-top: 40px;
@@ -137,26 +162,40 @@ footer {
   border-top: 1px solid #ccc;
   text-align: center;
   font-size: 0.9rem;
-  color: #333;
+  color: var(--color-texto);
 }
 
+/* Enlaces del pie */
 .footer-links {
   margin-bottom: 10px;
 }
 
 .footer-links a {
   margin: 0 8px;
-  color: #333;
+  color: var(--color-texto);
   text-decoration: none;
   position: relative;
 }
 
+/* Separadores entre enlaces */
 .footer-links a::after {
   content: "|";
   margin-left: 8px;
   color: #999;
 }
 
+/* Quitar separador en el último enlace */
 .footer-links a:last-child::after {
   content: "";
+}
+/* Clase para encabezados ocultos accesibles */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
 }
